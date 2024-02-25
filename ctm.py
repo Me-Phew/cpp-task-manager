@@ -415,10 +415,11 @@ def merge(
                 merged_data += "\n"
                 merged_data += task_file.read()
 
+                if not no_padding and not no_bottom_padding:
+                    merged_data += "-" * line_length
+                    merged_data += "\n"
+
                 if task_index + 1 < found_task_file_names_count:
-                    if not no_padding and not no_bottom_padding:
-                        merged_data += "-" * line_length
-                        merged_data += "\n"
                     merged_data += "\n"
     with open(output_file_name, "w") as output_file:
         output_file.write(merged_data)
