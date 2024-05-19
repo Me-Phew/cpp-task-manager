@@ -343,7 +343,7 @@ def merge(
                 prefix=task_file_name_prefix, task_num="[1-9]"
             )
     if not task_file_name_glob_pattern:
-        task_file_name_glob_pattern = task_file_name_template.format(task_num="[1-9]")
+        task_file_name_glob_pattern = task_file_name_template.format(prefix=task_file_name_prefix, task_num="[1-9]")
     found_task_file_names = [
         *glob.glob(task_file_name_glob_pattern),
         *glob.glob(task_file_name_glob_pattern.replace("[1-9]", "[1-9][0-9]")),
